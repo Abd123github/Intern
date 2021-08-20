@@ -10,19 +10,19 @@ def index(request):
     context ={
         'variable': 'this is sent'
     }
-    return render(request,'index.html', context)
+    return render(request,'../templates/index.html')
 
 def about(request):
     context ={
         'variable': 'this is sent'
     }
-    return render(request,'about.html', context)
+    return render(request,'../templates/about.html', context)
 
 def service(request):
     context ={
         'variable': 'this is sent'
     }
-    return render(request,'service.html', context)
+    return render(request,'../templates/service.html', context)
 
 def contact(request):
     if request.method == "POST":
@@ -33,4 +33,4 @@ def contact(request):
         contact= Contact(fname=fname, lname=lname, email=email, desc= desc, date=datetime.today())
         contact.save()
         messages.success(request, 'Thank you for the feedback!')
-    return render(request,'contact.html')
+    return render(request,'../templates/contact.html')
